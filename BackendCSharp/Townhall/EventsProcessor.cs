@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Townhall
 {
-    class EventsProcessor
+    public class EventsProcessor
     {
         private ILogger logger;
 
@@ -30,10 +30,14 @@ namespace Townhall
                 {
                     this.logger.LogInformation("  {0}: {1}", prop.Key, prop.Value);
                 }
-                this.logger.LogInformation("System properties (set by IoT Hub):");
-                foreach (var prop in eventData.SystemProperties)
+
+                if (eventData.SystemProperties != null)
                 {
-                    this.logger.LogInformation("  {0}: {1}", prop.Key, prop.Value);
+                    this.logger.LogInformation("System properties (set by IoT Hub):");
+                    foreach (var prop in eventData.SystemProperties)
+                    {
+                        this.logger.LogInformation("  {0}: {1}", prop.Key, prop.Value);
+                    }
                 }
             }
         }
