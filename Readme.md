@@ -19,3 +19,8 @@ dotnet user-secrets set "EventHubsCompatibleEndpoint" "{value}"
 dotnet user-secrets set "EventHubsCompatiblePath" "{value}"
 dotnet user-secrets set "IoTHubSasKey" "{value}"
 ```
+
+Where to start
+==============
+
+To start development open *Townhall.Tests* project where you can find simple test that runs code inside `EventsProcessor` class.
